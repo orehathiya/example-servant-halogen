@@ -1,4 +1,4 @@
-This project is a small example of [servant-server](http://haskell-servant.readthedocs.io/), [persistent](https://www.stackage.org/package/persistent) and [pux](https://github.com/alexmingoia/purescript-pux).
+This project is a small example of [servant-server](http://haskell-servant.readthedocs.io/), [persistent](https://www.stackage.org/package/persistent) and [halogen](https://github.com/purescript-halogen/purescript-halogen).
 
 # Server Side
 
@@ -39,4 +39,4 @@ npm install
 npm start
 ```
 
-Then you can browse top page at http://localhost:8080
+Then you can browse top page at http://localhost:1234
