@@ -4,7 +4,7 @@ COPY stack.yaml stack.yaml.lock package.yaml example-servant-persistent.cabal ./
 RUN stack build --system-ghc --only-dependencies
 COPY . /opt/build
 RUN stack build --system-ghc
-RUN mv "$(stack path --local-install-root --system-ghc)/bin" /opt/build/bin
+RUN cp -r "$(stack path --local-install-root --system-ghc)/bin" /opt/build
 
 FROM ubuntu:latest
 WORKDIR /opt/myapp/
