@@ -24,7 +24,6 @@ main =
 
 type State
   = { loading :: Boolean
-    , username :: String
     , result :: Maybe String
     }
 
@@ -41,25 +40,18 @@ component =
     }
 
 initialState :: forall i. i -> State
-initialState _ = { loading: false, username: "", result: Nothing }
+initialState _ = { loading: false, result: Nothing }
 
 render :: forall m. State -> H.ComponentHTML Action () m
 render st =
   HH.form
     [ HE.onSubmit \ev -> Just (MakeRequest ev) ]
-    [ HH.h1_ [ HH.text "Look up GitHub user" ]
-    , HH.label_
-        [ HH.div_ [ HH.text "Enter username:" ]
-        , HH.input
-            [ HP.value st.username
-            , HE.onValueInput \str -> Just (SetUsername str)
-            ]
-        ]
+    [ HH.h1_ [ HH.text "Look up user" ]
     , HH.button
         [ HP.disabled st.loading
         , HP.type_ HP.ButtonSubmit
         ]
-        [ HH.text "Fetch info" ]
+        [ HH.text "Fetch" ]
     , HH.p_
         [ HH.text (if st.loading then "Working..." else "") ]
     , HH.div_ case st.result of
@@ -75,10 +67,9 @@ render st =
 handleAction :: forall output m. MonadAff m => Action -> H.HalogenM State Action () output m Unit
 handleAction = case _ of
   SetUsername username -> do
-    H.modify_ _ { username = username, result = Nothing }
+    H.modify_ _ { result = Nothing }
   MakeRequest event -> do
     H.liftEffect $ Event.preventDefault event
-    username <- H.gets _.username
     H.modify_ _ { loading = true }
-    response <- H.liftAff $ AX.get AXRF.string ("https://api.github.com/users/" <> username)
+    response <- H.liftAff $ AX.get AXRF.string ("http://localhost:3000/user/get/Alice")
     H.modify_ _ { loading = false, result = map _.body (hush response) }
