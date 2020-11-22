@@ -1,3 +1,5 @@
 {
-  "purescript.buildCommand": "pulp --psc-package build -- --json-errors"
+    "purescript.addSpagoSources": true,
+    "purescript.addNpmPath": true,
+    "purescript.buildCommand": "spago build --purs-args --json-errors"
 }

@@ -6,7 +6,9 @@ static/dist/
 .psci_modules
 npm-debug.log
 **DS_Store
+/.psc*
 .psc-package/
-src/Model/
-src/Database/
-src/ServerAPI.purs
+/.spago
+/.cache/
+/dist/
+/prod/*
