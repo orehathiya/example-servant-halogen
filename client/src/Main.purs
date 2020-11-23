@@ -1,6 +1,7 @@
 module Main where
 
 import Prelude
+
 import Affjax as AX
 import Affjax.ResponseFormat as AXRF
 import Data.Either (hush)
