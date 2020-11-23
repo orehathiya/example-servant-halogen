@@ -19,12 +19,6 @@ curl -H 'Content-type: application/json' localhost:3000/user/add --data '{"name"
 curl -H 'Content-type: application/json' localhost:3000/user/get/Alice
 ```
 
-## purescript model & api query function generate
-
-``` bash
-stack exec psGenerator
-```
-
 ## api document generate
 
 ``` bash

@@ -62,20 +62,6 @@ executables:
       - example-servant-persistent
       - servant-swagger
       - aeson-pretty
-  psGenerator:
-    main: PSGenerator.hs
-    source-dirs:
-      - gen
-    dependencies:
-      - example-servant-persistent
-      - containers
-      - filepath
-      - http-api-data
-      - mainland-pretty
-      - purescript-bridge
-      - servant-foreign
-      - servant-purescript
-      - servant-subscriber
 tests:
   spec:
     main: Spec.hs

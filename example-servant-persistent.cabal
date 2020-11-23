@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: b6cb688e6deb7265cca44c0397530641900bed953479c0d1399a84b16b883bed
+-- hash: 5e77254c6467e7bcdd387936b0f3f8d838e4148c603a0f75ba573c813cf0aee3
 
 name:           example-servant-persistent
 version:        0.1.0.0
@@ -173,50 +173,6 @@ executable example-servant-persistent-swagger
     , servant-docs
     , servant-server
     , servant-swagger
-    , string-conversions
-    , swagger2
-    , text
-    , time
-    , transformers
-    , wai
-    , warp
-    , yaml
-  default-language: Haskell2010
-
-executable psGenerator
-  main-is: PSGenerator.hs
-  other-modules:
-      Paths_example_servant_persistent
-  hs-source-dirs:
-      gen
-  ghc-options: -Wall
-  build-depends:
-      aeson
-    , base >=4.8 && <5
-    , basement
-    , bytestring
-    , containers
-    , dhall
-    , example-servant-persistent
-    , filepath
-    , http-api-data
-    , http-types
-    , lens
-    , mainland-pretty
-    , monad-logger
-    , mtl
-    , persistent
-    , persistent-sqlite
-    , persistent-template
-    , purescript-bridge
-    , resourcet
-    , servant
-    , servant-client
-    , servant-docs
-    , servant-foreign
-    , servant-purescript
-    , servant-server
-    , servant-subscriber
     , string-conversions
     , swagger2
     , text
