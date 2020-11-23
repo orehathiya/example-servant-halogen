@@ -1,3 +1,6 @@
+![Haskell CI](https://github.com/orehathiya/example-servant-halogen/workflows/Haskell%20CI/badge.svg)
+![Node CI](https://github.com/orehathiya/example-servant-halogen/workflows/Node%20CI/badge.svg)
+
 This project is a small example of [servant-server](http://haskell-servant.readthedocs.io/), [persistent](https://www.stackage.org/package/persistent) and [halogen](https://github.com/purescript-halogen/purescript-halogen).
 
 # Server Side
