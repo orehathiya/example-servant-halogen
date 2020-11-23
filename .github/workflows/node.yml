@@ -16,7 +16,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v1
 
       # - name: Cache
       #   uses: actions/cache@v2
@@ -30,5 +30,7 @@ jobs:
       #       ${{ runner.os }}-build-
       #       ${{ runner.os }}-
 
+      - name: Install Dependencies
+        run: npm install
       - name: Run build
         run: npm build
