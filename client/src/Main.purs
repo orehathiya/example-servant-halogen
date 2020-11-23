@@ -1,7 +1,6 @@
 module Main where
 
 import Prelude
-
 import Affjax as AX
 import Affjax.ResponseFormat as AXRF
 import Data.Either (hush)
@@ -29,8 +28,7 @@ type State
     }
 
 data Action
-  = SetUsername String
-  | MakeRequest Event
+  = MakeRequest Event
 
 component :: forall query input output m. MonadAff m => H.Component HH.HTML query input output m
 component =
@@ -67,8 +65,6 @@ render st =
 
 handleAction :: forall output m. MonadAff m => Action -> H.HalogenM State Action () output m Unit
 handleAction = case _ of
-  SetUsername username -> do
-    H.modify_ _ { result = Nothing }
   MakeRequest event -> do
     H.liftEffect $ Event.preventDefault event
     H.modify_ _ { loading = true }
